@@ -1,4 +1,4 @@
-description: A profile for creating Grails applications with a React frontend
+description: A profile for creating Grails applications with a React frontend using Webpack
 instructions: |
     Webpack is configured to bundle React components from src/main/webapp into grails-app/assets. The bundle will be generated once when the app is started. To run webpack in "watch" mode, run the following command:
 
