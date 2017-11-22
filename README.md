@@ -1,5 +1,5 @@
 # Grails React-Webpack Profile
-A profile for creating Grails applications with a React frontend using Webpack
+A profile for creating Grails applications with a React frontend using Webpack (requires Grails 3.3.2 or greater)
 
 [![Build Status](https://travis-ci.org/grails-profiles/react-webpack.svg?branch=master)](https://travis-ci.org/grails-profiles/react-webpack)
 
@@ -7,9 +7,6 @@ A profile for creating Grails applications with a React frontend using Webpack
 ```
 grails create-app myApp -profile react-webpack
 ```
-
-
- - If you are looking for the multi-project client/server version of this profile, please see the 2.x branch: https://github.com/grails-profiles/react-webpack/
 
 This profile is based on the approach described in this post: http://grailsblog.objectcomputing.com/posts/2016/05/28/using-react-with-grails.html  Please read this post for more information.
 
