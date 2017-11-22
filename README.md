@@ -1,7 +1,7 @@
 # Grails React-Webpack Profile
 A profile for creating Grails applications with a React frontend using Webpack
 
-[![Build Status](https://travis-ci.org/grails-profiles/react.svg?branch=master)](https://travis-ci.org/grails-profiles/react)
+[![Build Status](https://travis-ci.org/grails-profiles/react-webpack.svg?branch=master)](https://travis-ci.org/grails-profiles/react-webpack)
 
 
 ```
