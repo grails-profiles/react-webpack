@@ -1,8 +1,0 @@
-You can explore the
-https://github.com/grails-profiles-versions/react-webpack-versions[differences between Grails versions],
-to ease the upgrade of your Grails application created with the `react-webpack` profile.
-
-
-
-
-

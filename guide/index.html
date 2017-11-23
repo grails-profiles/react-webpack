@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>React-Webpack Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
+    <script src="../js/docs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
+    <script type="text/javascript">
+        function addJsClass(el) {
+            var classes = document.body.className.split(" ");
+            classes.push("js");
+            document.body.className = classes.join(" ");
+        }
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <div class="navTitle">
+        
+        React-Webpack Profile
+    </div>
+    <div class="navLinks">
+        <ul>
+            <li>
+                <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                    <a href="../guide/index.html" class="button">Table of contents</a>
+                    <div id="nav-summary-childs" style="display:none;">
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#upgrade"><strong>3</strong><span>Upgrade</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#guides"><strong>4</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#profileinfo"><strong>5</strong><span>Profile Info</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#knownIssues"><strong>6</strong><span>Known Issues</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#support"><strong>7</strong><span>Support</span></a></div>
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+            <div id="main" class="corner-all">
+
+                <div class="project">
+                    <h1>React-Webpack Profile</h1>
+                    <p></p>
+                    <p>A Grails profile for creating applications using React-Webpack</p>
+                    <p><strong>Version:</strong> 1.1.1.BUILD-SNAPSHOT</p>
+
+                </div>
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#upgrade"><strong>3</strong><span>Upgrade</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#guides"><strong>4</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#profileinfo"><strong>5</strong><span>Profile Info</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#knownIssues"><strong>6</strong><span>Known Issues</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#support"><strong>7</strong><span>Support</span></a></div>
+                    
+                    <div style="clear:both" ></div>
+                </div>
+                
+                
+
+<h1 id="introduction">1 Introduction</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/introduction.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>This profile provides a monolithic project structure with React code embedded within the Grails project.</p>
+</div>
+<div class="paragraph">
+<p>To create an application using the <code>react-weback</code> profile you can use the next command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">grails create-app myapp -profile react-weback</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also choose this project when generating your project from the <a href="http://start.grails.org">Grails Application Forge</a>, either from the web app or via the API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">curl -O start.grails.org/myapp.zip -d profile=react-webpack</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Grails Application Forge is a great way to discover the different provided features in the profile.</p>
+</div>
+
+
+<h1 id="usage">2 Usage</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/usage.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>Grails react-webpack profiles configures Webpack to bundle React components from <code>src/main/webapp</code>
+into <code>grails-app/assets</code>. The bundle will be generated once when the app is started.</p>
+</div>
+<div class="paragraph">
+<p>To run webpack in "watch" mode, run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">./gradlew webpack</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Client-side tests are located in <code>src/test/webapp</code>, and can be run via npm, yarn, or Gradle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">./gradlew mochTest</code></pre>
+</div>
+</div>
+
+
+<h1 id="upgrade">3 Upgrade</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/upgrade.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>You can explore the
+<a href="https://github.com/grails-profiles-versions/react-webpack-versions">differences between Grails versions</a>,
+to ease the upgrade of your Grails application created with the <code>react-webpack</code> profile.</p>
+</div>
+
+
+<h1 id="guides">4 Guides, Quickcast and Blog Posts</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/guides.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>To learn more about the React profiles, check the following Grails Guides &amp; Quickcasts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=JVLn7kWkjp0">Grails Quickcast #8 - Grails React Profile</a></p>
+</li>
+<li>
+<p><a href="http://guides.grails.org/using-the-react-profile/guide/index.html">Using the React Profile</a></p>
+</li>
+<li>
+<p><a href="http://guides.grails.org/building-a-react-app/guide/index.html">Building a React App</a></p>
+</li>
+<li>
+<p><a href="http://guides.grails.org/react-combined/guide/index.html">Combining the React profile projects</a></p>
+</li>
+<li>
+<p><a href="http://guides.grails.org/react-spring-security/guide/index.html">Creating a React app with Spring Security</a></p>
+</li>
+<li>
+<p><a href="http://guides.grails.org/grails-vs-nodejs/guide/index.html">Replacing a Node/Express API with Grails</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following blog posts would be useful too:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://grailsblog.objectcomputing.com/posts/2016/11/14/introducing-the-react-profile-for-grails.html">Introducing the React Profile for Grails</a></p>
+</li>
+<li>
+<p><a href="http://grailsblog.objectcomputing.com/posts/2016/05/28/using-react-with-grails.html">Using React with Grails</a></p>
+</li>
+</ul>
+</div>
+
+
+<h1 id="profileinfo">5 Profile Info</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/profileinfo.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>You can always get information about the provided command and available features executing
+<code>grails profile-info react-webpack</code></p>
+</div>
+<div class="paragraph">
+<p>You will see an output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">Profile: react-webpack
+--------------------
+A profile for creating Grails applications with a React frontend using Webpack
+
+Provided Commands:
+--------------------
+* help - Prints help information for a specific command
+* open - Opens a file in the project
+* gradle - Allows running of Gradle tasks
+* create-controller - Creates a controller
+* create-integration-test - Creates an integration test
+* create-interceptor - Creates an interceptor
+* create-taglib - Creates a Tag Library
+* clean - Cleans a Grails application's compiled sources
+* compile - Compiles a Grails application
+* create-command - Creates an Application Command
+* create-domain-class - Creates a Domain Class
+* create-service - Creates a Service
+* create-unit-test - Creates a unit test
+* install - Installs a Grails application or plugin into the local Maven cache
+* assemble - Creates a JAR or WAR archive for production deployment
+* bug-report - Creates a zip file that can be attached to issue reports for the current project
+* console - Runs the Grails interactive console
+* create-script - Creates a Grails script
+* dependency-report - Prints out the Grails application's dependencies
+* list-plugins - Lists available plugins from the Plugin Repository
+* plugin-info - Prints information about the given plugin
+* run-app - Runs a Grails application
+* run-command - Executes Grails commands
+* run-script - Executes Groovy scripts in a Grails context
+* shell - Runs the Grails interactive shell
+* stats - Prints statistics about the project
+* stop-app - Stops the running Grails application
+* test-app - Runs the applications tests
+
+Provided Features:
+--------------------
+* babel - Preconfigures webpack with babel-loader and ES6 transpilation
+* asset-pipeline - Adds Asset Pipeline to a Grails project
+* events - Adds support for the Grails EventBus abstraction
+* geb - Adds Geb and webdriver dependencies to run functional tests
+* gsp - Adds support for GSP to the project
+* hibernate4 - Adds GORM for Hibernate 4 to the project
+* hibernate5 - Adds GORM for Hibernate 5 to the project
+* json-views - Adds support for JSON Views to the project
+* less-asset-pipeline - Adds LESS Transpiler Asset Pipeline to a Grails project
+* markup-views - Adds support for Markup Views to the project
+* mongodb - Adds GORM for MongoDB to the project
+* neo4j - Adds GORM for Neo4j to the project
+* rx-mongodb - Adds RxGORM for MongoDB to the project</code></pre>
+</div>
+</div>
+
+
+<h1 id="knownIssues">6 Known Issues</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/knownIssues.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>Both of these profiles (as well as the angular profile) leverage the
+<a href="https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript">Gradle Node Plugin</a>
+to wrap the Node.js build tools when running via Grails or Gradle commands. Unfortunately, there
+are a couple of issues with the underlying Gradle task management with this plugin. In particular,
+the following two issues are known and being investigated:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Node process sometimes fails to stop when run from Gradle - this is due to an issue in
+<a href="https://github.com/gradle/gradle/issues/1128">Gradle</a>. You may need to kill the process manually
+in order to restart the app.</p>
+</li>
+<li>
+<p>Errors when running React tests via Gradle - this error seems to be specific to the latest
+versions of macOS. A related issue has been <a href="https://github.com/facebook/jest/issues/1767">reported against Jest</a>,
+the testing framework used in this profile for React tests. One workaround is to not use
+Gradle to manage the Node.js installation - instead, you can install Node manually
+(or using <a href="https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript">NVM</a>),
+and then set the download flag in the Gradle-Node plugin config to false in build.gradle:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">node {
+    version = <span class="string"><span class="delimiter">'</span><span class="content">8.7.0</span><span class="delimiter">'</span></span>
+    yarnVersion = <span class="string"><span class="delimiter">'</span><span class="content">1.3.2</span><span class="delimiter">'</span></span>
+    download = <span class="predefined-constant">false</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now run the tests either using <code>./gradlew client:test</code>, or <code>yarn test</code>.</p>
+</div>
+
+
+<h1 id="support">7 Support</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/support.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>For support, please use the <a href="https://groovycommunity.slack.com/">Groovy Community Slack</a> or open an issue on
+<a href="https://github.com/grails-profiles/react/issues">Github</a></p>
+</div>
+
+            </div>
+
+<div id="footer">
+    
+    
+</div>
+
+
+</body>
+</html>

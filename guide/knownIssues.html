@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>6 Known Issues 1.1.1.BUILD-SNAPSHOT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <div class="navTitle">
+        
+        React-Webpack Profile
+    </div>
+    <div class="navLinks">
+        <ul>
+            <li>
+                <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                    <a href="../guide/index.html" class="button">Table of contents</a>
+
+                    <div id="nav-summary-childs" style="display:none;">
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/usage.html"><strong>2</strong><span>Usage</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/upgrade.html"><strong>3</strong><span>Upgrade</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/guides.html"><strong>4</strong><span>Guides, Quickcast and Blog Posts</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/profileinfo.html"><strong>5</strong><span>Profile Info</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/knownIssues.html"><strong>6</strong><span>Known Issues</span></a>
+                        </div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="../guide/support.html"><strong>7</strong><span>Support</span></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="separator selected">
+                <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/profileinfo.html">&lt;&lt; <strong>5</strong><span>Profile Info</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/support.html"><strong>7</strong><span>Support</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>6 Known Issues</h1>
+
+                    <p><strong>Version:</strong> 1.1.1.BUILD-SNAPSHOT</p>
+                </div>
+
+                
+
+                
+
+<h1 id="knownIssues">6 Known Issues</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/knownIssues.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>Both of these profiles (as well as the angular profile) leverage the
+<a href="https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript">Gradle Node Plugin</a>
+to wrap the Node.js build tools when running via Grails or Gradle commands. Unfortunately, there
+are a couple of issues with the underlying Gradle task management with this plugin. In particular,
+the following two issues are known and being investigated:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Node process sometimes fails to stop when run from Gradle - this is due to an issue in
+<a href="https://github.com/gradle/gradle/issues/1128">Gradle</a>. You may need to kill the process manually
+in order to restart the app.</p>
+</li>
+<li>
+<p>Errors when running React tests via Gradle - this error seems to be specific to the latest
+versions of macOS. A related issue has been <a href="https://github.com/facebook/jest/issues/1767">reported against Jest</a>,
+the testing framework used in this profile for React tests. One workaround is to not use
+Gradle to manage the Node.js installation - instead, you can install Node manually
+(or using <a href="https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript">NVM</a>),
+and then set the download flag in the Gradle-Node plugin config to false in build.gradle:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">node {
+    version = <span class="string"><span class="delimiter">'</span><span class="content">8.7.0</span><span class="delimiter">'</span></span>
+    yarnVersion = <span class="string"><span class="delimiter">'</span><span class="content">1.3.2</span><span class="delimiter">'</span></span>
+    download = <span class="predefined-constant">false</span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now run the tests either using <code>./gradlew client:test</code>, or <code>yarn test</code>.</p>
+</div>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/profileinfo.html">&lt;&lt; <strong>5</strong><span>Profile Info</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/support.html"><strong>7</strong><span>Support</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>
