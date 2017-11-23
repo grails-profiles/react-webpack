@@ -1,0 +1,26 @@
+Both of these profiles (as well as the angular profile) leverage the
+https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript[Gradle Node Plugin]
+to wrap the Node.js build tools when running via Grails or Gradle commands. Unfortunately, there
+are a couple of issues with the underlying Gradle task management with this plugin. In particular,
+the following two issues are known and being investigated:
+
+1. Node process sometimes fails to stop when run from Gradle - this is due to an issue in
+[Gradle](https://github.com/gradle/gradle/issues/1128). You may need to kill the process manually
+in order to restart the app.
+2. Errors when running React tests via Gradle - this error seems to be specific to the latest
+versions of macOS. A related issue has been https://github.com/facebook/jest/issues/1767[reported against Jest],
+the testing framework used in this profile for React tests. One workaround is to not use
+Gradle to manage the Node.js installation - instead, you can install Node manually
+(or using https://github.com/objectcomputing/grails-team-blog/blob/react-webpack-profile/_posts/javascript[NVM]),
+and then set the download flag in the Gradle-Node plugin config to false in build.gradle:
+
+[source, groovy]
+----
+node {
+    version = '8.7.0'
+    yarnVersion = '1.3.2'
+    download = false
+}
+----
+
+You can now run the tests either using `./gradlew client:test`, or `yarn test`.
