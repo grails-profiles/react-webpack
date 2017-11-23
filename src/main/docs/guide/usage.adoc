@@ -1,16 +1,10 @@
-Grails react-webpack profiles configures Webpack to bundle React components from `src/main/webapp`
-into `grails-app/assets`. The bundle will be generated once when the app is started.
+To get started with this profile, simply run the Grails application using
+`grails run-app` or `./gradlew bootRun`. The profile will configure the
+https://github.com/srs/gradle-node-plugin[Gradle-node plugin] with `npm` scripts to build
+the React application on build time. Grails react-webpack profile configures Webpack to bundle
+React components from `src/main/webapp` into `grails-app/assets`. The bundle will be
+generated once when the app is started.
 
-To run webpack in "watch" mode, run the following command:
-
-[source, bash]
-----
-./gradlew webpack
-----
-
-Client-side tests are located in `src/test/webapp`, and can be run via npm, yarn, or Gradle:
-
-[source, bash]
-----
-./gradlew mochTest
-----
+In order to take advantage of webpack's "watch" mode to automatically reload changes, you
+will need to run webpack along with the Grails application.
+Use `npm run webpack` or use the Gradle wrapper: `./gradlew webpack`

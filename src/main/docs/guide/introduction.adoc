@@ -1,4 +1,9 @@
-This profile provides a monolithic project structure with React code embedded within the Grails project.
+This profile is based on the approach described in
+this post http://grailsblog.objectcomputing.com/posts/2016/05/28/using-react-with-grails.html[Using React with Grails].
+Please read this post for more information.
+
+This profile is a superset of the https://github.com/grails-profiles/webpack[webpack] profile.
+It provides a monolithic project structure with React code embedded within the Grails project.
 
 To create an application using the `react-weback` profile you can use the next command:
 

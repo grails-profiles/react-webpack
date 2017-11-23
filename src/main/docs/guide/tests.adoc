@@ -1,0 +1,6 @@
+Client-side tests are located in `src/test/webapp`, and can be run via npm, yarn, or Gradle:
+
+[source, bash]
+----
+./gradlew mochTest
+----
