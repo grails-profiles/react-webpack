@@ -1,6 +1,6 @@
-Client-side tests are located in `src/test/webapp`, and can be run via npm, yarn, or Gradle:
+Following convention, the client-side tests are located alongside the other React source files in `src/main/webapp`, and can be run via npm, yarn, or Gradle:
 
 [source, bash]
 ----
-./gradlew mochTest
+./gradlew mochaTest
 ----
