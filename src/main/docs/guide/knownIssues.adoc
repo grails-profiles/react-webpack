@@ -5,7 +5,7 @@ are a couple of issues with the underlying Gradle task management with this plug
 the following two issues are known and being investigated:
 
 1. Node process sometimes fails to stop when run from Gradle - this is due to an issue in
-[Gradle](https://github.com/gradle/gradle/issues/1128). You may need to kill the process manually
+https://github.com/gradle/gradle/issues/1128[Gradle]. You may need to kill the process manually
 in order to restart the app.
 2. Errors when running React tests via Gradle - this error seems to be specific to the latest
 versions of macOS. A related issue has been https://github.com/facebook/jest/issues/1767[reported against Jest],
