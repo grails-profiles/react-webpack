@@ -17,14 +17,15 @@ if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
     rm -rf latest
     mkdir -p latest
     cp -r ../build/docs/. ./latest/
-    git add latest/*
-
-    git commit -a -m "Updating React Profile Docs for Travis build: https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
-    git push origin HEAD
-
+    if git diff --quiet; then
+        echo "No changes in GUIDES Website"
+    else
+        git add -A latest/*
+        git commit -a -m "Updating react-webpack profile Docs for Travis build: https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
+        git push origin HEAD
+    fi
     cd ..
     rm -rf gh-pages
-
 fi
 
 exit $EXIT_STATUS
