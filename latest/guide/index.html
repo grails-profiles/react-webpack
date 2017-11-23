@@ -34,15 +34,17 @@
                         
                         <div class="toc-item" style="margin-left:0"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="#upgrade"><strong>3</strong><span>Upgrade</span></a></div>
+                        <div class="toc-item" style="margin-left:0"><a href="#tests"><strong>3</strong><span>Running Tests</span></a></div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="#guides"><strong>4</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
+                        <div class="toc-item" style="margin-left:0"><a href="#upgrade"><strong>4</strong><span>Upgrade</span></a></div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="#profileinfo"><strong>5</strong><span>Profile Info</span></a></div>
+                        <div class="toc-item" style="margin-left:0"><a href="#guides"><strong>5</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="#knownIssues"><strong>6</strong><span>Known Issues</span></a></div>
+                        <div class="toc-item" style="margin-left:0"><a href="#profileinfo"><strong>6</strong><span>Profile Info</span></a></div>
                         
-                        <div class="toc-item" style="margin-left:0"><a href="#support"><strong>7</strong><span>Support</span></a></div>
+                        <div class="toc-item" style="margin-left:0"><a href="#knownIssues"><strong>7</strong><span>Known Issues</span></a></div>
+                        
+                        <div class="toc-item" style="margin-left:0"><a href="#support"><strong>8</strong><span>Support</span></a></div>
                         
                     </div>
                 </div>
@@ -69,15 +71,17 @@
                     
                     <div class="toc-item" style="margin-left:0px"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#upgrade"><strong>3</strong><span>Upgrade</span></a></div>
+                    <div class="toc-item" style="margin-left:0px"><a href="#tests"><strong>3</strong><span>Running Tests</span></a></div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#guides"><strong>4</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
+                    <div class="toc-item" style="margin-left:0px"><a href="#upgrade"><strong>4</strong><span>Upgrade</span></a></div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#profileinfo"><strong>5</strong><span>Profile Info</span></a></div>
+                    <div class="toc-item" style="margin-left:0px"><a href="#guides"><strong>5</strong><span>Guides, Quickcast and Blog Posts</span></a></div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#knownIssues"><strong>6</strong><span>Known Issues</span></a></div>
+                    <div class="toc-item" style="margin-left:0px"><a href="#profileinfo"><strong>6</strong><span>Profile Info</span></a></div>
                     
-                    <div class="toc-item" style="margin-left:0px"><a href="#support"><strong>7</strong><span>Support</span></a></div>
+                    <div class="toc-item" style="margin-left:0px"><a href="#knownIssues"><strong>7</strong><span>Known Issues</span></a></div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#support"><strong>8</strong><span>Support</span></a></div>
                     
                     <div style="clear:both" ></div>
                 </div>
@@ -94,7 +98,13 @@
 
 
 <div class="paragraph">
-<p>This profile provides a monolithic project structure with React code embedded within the Grails project.</p>
+<p>This profile is based on the approach described in
+this post <a href="http://grailsblog.objectcomputing.com/posts/2016/05/28/using-react-with-grails.html">Using React with Grails</a>.
+Please read this post for more information.</p>
+</div>
+<div class="paragraph">
+<p>This profile is a superset of the <a href="https://github.com/grails-profiles/webpack">webpack</a> profile.
+It provides a monolithic project structure with React code embedded within the Grails project.</p>
 </div>
 <div class="paragraph">
 <p>To create an application using the <code>react-weback</code> profile you can use the next command:</p>
@@ -127,17 +137,29 @@
 
 
 <div class="paragraph">
-<p>Grails react-webpack profiles configures Webpack to bundle React components from <code>src/main/webapp</code>
-into <code>grails-app/assets</code>. The bundle will be generated once when the app is started.</p>
+<p>To get started with this profile, simply run the Grails application using
+<code>grails run-app</code> or <code>./gradlew bootRun</code>. The profile will configure the
+<a href="https://github.com/srs/gradle-node-plugin">Gradle-node plugin</a> with <code>npm</code> scripts to build
+the React application on build time. Grails react-webpack profile configures Webpack to bundle
+React components from <code>src/main/webapp</code> into <code>grails-app/assets</code>. The bundle will be
+generated once when the app is started.</p>
 </div>
 <div class="paragraph">
-<p>To run webpack in "watch" mode, run the following command:</p>
+<p>In order to take advantage of webpack&#8217;s "watch" mode to automatically reload changes, you
+will need to run webpack along with the Grails application.
+Use <code>npm run webpack</code> or use the Gradle wrapper: <code>./gradlew webpack</code></p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">./gradlew webpack</code></pre>
+
+
+<h1 id="tests">3 Running Tests</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/tests.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
 </div>
-</div>
+
+
 <div class="paragraph">
 <p>Client-side tests are located in <code>src/test/webapp</code>, and can be run via npm, yarn, or Gradle:</p>
 </div>
@@ -148,7 +170,7 @@ into <code>grails-app/assets</code>. The bundle will be generated once when the 
 </div>
 
 
-<h1 id="upgrade">3 Upgrade</h1>
+<h1 id="upgrade">4 Upgrade</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/upgrade.adoc"'>
@@ -164,7 +186,7 @@ to ease the upgrade of your Grails application created with the <code>react-webp
 </div>
 
 
-<h1 id="guides">4 Guides, Quickcast and Blog Posts</h1>
+<h1 id="guides">5 Guides, Quickcast and Blog Posts</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/guides.adoc"'>
@@ -213,7 +235,7 @@ to ease the upgrade of your Grails application created with the <code>react-webp
 </div>
 
 
-<h1 id="profileinfo">5 Profile Info</h1>
+<h1 id="profileinfo">6 Profile Info</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/profileinfo.adoc"'>
@@ -285,7 +307,7 @@ Provided Features:
 </div>
 
 
-<h1 id="knownIssues">6 Known Issues</h1>
+<h1 id="knownIssues">7 Known Issues</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/knownIssues.adoc"'>
@@ -332,7 +354,7 @@ and then set the download flag in the Gradle-Node plugin config to false in buil
 </div>
 
 
-<h1 id="support">7 Support</h1>
+<h1 id="support">8 Support</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grails-profiles/react-webpack/edit/docs/src/main/docs/guide/support.adoc"'>
