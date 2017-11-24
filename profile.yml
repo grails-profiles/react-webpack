@@ -9,9 +9,10 @@ instructions: |
     gradlew mochTest
 
 features:
-    defaults:
+    defaults:  
         - hibernate5
         - events
+        - geb
     required:
         - json-views
         - gsp
