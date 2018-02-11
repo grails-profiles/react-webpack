@@ -28,4 +28,4 @@ build:
         - org.grails.grails-core
 dependencies:
     build:
-         - "com.moowork.gradle:gradle-node-plugin:1.1.1"
+         - "com.moowork.gradle:gradle-node-plugin:1.2.0"
