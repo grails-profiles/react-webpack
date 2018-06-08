@@ -6,7 +6,7 @@ instructions: |
 
     Client-side tests are located in src/test/webapp, and can be run via npm, yarn, or Gradle:
 
-    gradlew mochTest
+    gradlew mochaTest
 
 features:
     defaults:  
