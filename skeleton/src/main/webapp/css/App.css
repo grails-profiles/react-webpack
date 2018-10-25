@@ -49,7 +49,7 @@ a:hover {
 }
 
 .grails-logo-container {
-  background: #7c7c7c no-repeat 50% 30%;
+  background:#7c7c7c no-repeat 50% 30%;
   margin-bottom: 20px;
   color: white;
   height:300px;
@@ -109,7 +109,7 @@ a:hover {
 
 .navbar-brand {
   width: 80px;
-  height: 80px;
+  height: 88 spx;
   padding: 0;
   margin: 0;
 }
@@ -138,6 +138,4 @@ a:hover {
   .navbar-toggle .icon-bar {
     background-color: white!important;
   }
-
-
 }
