@@ -12,7 +12,7 @@ features:
     defaults:  
         - hibernate5
         - events
-        - geb
+        - geb2
     required:
         - json-views
         - gsp
