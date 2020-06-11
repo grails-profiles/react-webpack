@@ -1,3 +1,9 @@
+Alert :warning: This profile is deprecated as of Grails 4. To keep using it, you must refer to the complete package+version profile, i.e.:
+[source, bash]
+----
+grails create-app myapp --profile=org.grails.profiles:react-webpack:1.0.8
+----
+
 This profile is based on the approach described in
 this post http://grailsblog.objectcomputing.com/posts/2016/05/28/using-react-with-grails.html[Using React with Grails].
 Please read this post for more information.
