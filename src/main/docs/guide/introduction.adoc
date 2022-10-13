@@ -9,14 +9,6 @@ To create an application using the `react-weback` profile you can use the next c
 
 [source, bash]
 ----
-grails create-app myapp -profile react-weback
+grails create-app myapp -profile org.grails.profiles:react-webpack:1.0.8
 ----
-
-You can also choose this project when generating your project from the http://start.grails.org[Grails Application Forge], either from the web app or via the API:
-
-[source, bash]
-----
-curl -O start.grails.org/myapp.zip -d profile=react-webpack
-----
-
-Grails Application Forge is a great way to discover the different provided features in the profile.
+(at the time of writing 1.0.8 was the latest version, use whatever version you see fit)
